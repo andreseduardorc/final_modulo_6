@@ -1,19 +1,16 @@
 const express = require('express');
 const fs = require('fs');
-const path = require('path'); // Importar el módulo path
+const path = require('path'); 
 
 const app = express();
 const port = 3001;
 
 app.use(express.json());
 
-const animeDataPath = path.join(__dirname, 'anime.json'); // Obtener la ruta del archivo anime.json
-const animeData = JSON.parse(fs.readFileSync(animeDataPath, 'utf-8')); // Leer los datos del archivo
+const animeDataPath = path.join(__dirname, 'anime.json'); 
+const animeData = JSON.parse(fs.readFileSync(animeDataPath, 'utf-8')); 
 
-// Endpoint raíz de prueba
-app.get('/', (req, res) => {
-  res.json({ message: 'Hola, bienvenido al servidor' });
-});
+
 
 // Listar todos los animes
 app.get('/animes', (req, res) => {
@@ -87,7 +84,7 @@ app.delete('/animes/:id', (req, res) => {
   }
 });
 
-// Iniciar el servidor y exportarlo para usarlo en las pruebas
+
 const server = app.listen(port, () => {
   console.log(`Servidor escuchando en http://localhost:${port}`);
 });
