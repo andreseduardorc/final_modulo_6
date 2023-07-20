@@ -1,0 +1,5 @@
+Invoke-WebRequest -Uri http://localhost:3001/animes -Method POST -Headers @{"Content-Type"="application/json"} -Body '{"nombre": "prueba", "genero": "prueba", "año": "11111", "autor": "prueba"}'
+
+
+
+Invoke-WebRequest -Uri http://localhost:3001/animes/6 -Method DELETE
